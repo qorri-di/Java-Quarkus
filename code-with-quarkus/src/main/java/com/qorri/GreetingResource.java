@@ -1,16 +1,16 @@
-package org.acme;
+package com.qorri;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 @Path("/hello")
 public class GreetingResource {
 
     @GET
+    @Path("/learning")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        System.out.println("latihan euy");
         return "Hello from RESTEasy Reactive";
     }
 }
