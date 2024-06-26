@@ -10,7 +10,6 @@ public class GreetingResource {
     @Path("/hello")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        System.out.println("latihan euy");
         return "Hello from RESTEasy Reactive";
     }
 }
