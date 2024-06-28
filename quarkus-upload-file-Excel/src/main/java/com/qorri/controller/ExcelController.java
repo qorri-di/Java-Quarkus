@@ -1,17 +1,27 @@
 package com.qorri.controller;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import com.qorri.dto.*;
+import com.qorri.service.ExcelService;
+import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
+
+import javax.inject.Inject;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
 
-@Path("/api/learning/qorri-di")
+@Path("/api/learning/qorri-di/file")
 public class ExcelController {
+    @Inject
+    ExcelService es;
 
-    @GET
-    @Path("/hello")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello from RESTEasy Reactive";
+    @POST
+    @Path("/upload-excel")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ResponseDTO uploadFile(@MultipartForm FileUploadForm form) {
+        if (form.file == null){
+            return new ResponseDTO<>().errorResponse(203,"Please input file");
+        }
+        return es.uploadExcel(form.file);
     }
 }
