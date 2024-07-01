@@ -23,7 +23,6 @@ public class KafkaController {
     @POST
     @Path("/send-to-kafka")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
     public void sendKafka(KafkaRequest request) {
         JsonObject jsonData = JsonObject.mapFrom(request);
         long start = System.currentTimeMillis();
