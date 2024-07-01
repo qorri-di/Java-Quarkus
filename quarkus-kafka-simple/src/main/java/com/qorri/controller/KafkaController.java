@@ -5,12 +5,10 @@ import io.vertx.core.json.JsonObject;
 import org.eclipse.microprofile.reactive.messaging.*;
 import org.jboss.logging.Logger;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-@ApplicationScoped
 @Path("/api/learning/qorri-di/kafka")
 public class KafkaController {
     @Inject
@@ -22,14 +20,14 @@ public class KafkaController {
 
     @POST
     @Path("/send-to-kafka")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void sendKafka(KafkaRequest request) {
-        JsonObject jsonData = JsonObject.mapFrom(request);
+    @Consumes(MediaType.TEXT_PLAIN)
+    public void sendKafka(String request) {
+        JsonObject req = new JsonObject(request);
         long start = System.currentTimeMillis();
-        eventOut.send(jsonData.encode());
+        eventOut.send(req.encodePrettily());
         long stop=System.currentTimeMillis();
         logger.infof("------eventOut.send [%s ms]--------",(stop-start));
 
-        logger.infof("------------------ Data telah di submit [%s] ------------------", jsonData.encode());
+        logger.infof("------------------ Data telah di submit [%s] ------------------", req.encodePrettily());
     }
 }
