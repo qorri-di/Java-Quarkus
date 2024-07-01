@@ -17,12 +17,9 @@ public class KafkaEvent {
     @Incoming("event-in")
     public void sendToKafka(String request){
         logger.infof("------------------ Incoming Data [%s] ------------------", request);
-        JsonObject jsonPayload=new JsonObject(request);
 
         // create logic save
 
-        logger.infof("------------------ Data [[ %s ]] ------------------",jsonPayload.encodePrettily());
-        logger.infof("------------------ Data telah tersimpan ------------------");
-
+        logger.infof("------------------ Data has been successfully ------------------");
     }
 }
