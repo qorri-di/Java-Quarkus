@@ -1,10 +1,10 @@
-package com.qorri;
+package com.qorri.controller;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/api/learning/qorri-di")
-public class GreetingResource {
+public class BinaryController {
 
     @GET
     @Path("/hello")
