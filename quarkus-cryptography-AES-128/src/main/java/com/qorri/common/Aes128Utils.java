@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 @ApplicationScoped
-public class AESUtils {
+public class Aes128Utils {
     private String AES_ALGORITHM = "AES";
     private String AES_KEY = "Insta: @qorri_di"; // Ganti dengan kunci rahasia Anda your-secret-key
 

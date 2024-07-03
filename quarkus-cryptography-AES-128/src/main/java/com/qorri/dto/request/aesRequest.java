@@ -1,4 +1,4 @@
-package com.qorri.dto;
+package com.qorri.dto.request;
 
 public class aesRequest {
 

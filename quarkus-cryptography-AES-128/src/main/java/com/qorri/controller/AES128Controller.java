@@ -1,7 +1,8 @@
 package com.qorri.controller;
 
-import com.qorri.common.AESUtils;
-import com.qorri.dto.*;
+import com.qorri.common.Aes128Utils;
+import com.qorri.dto.request.aesRequest;
+import com.qorri.dto.response.*;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -11,16 +12,19 @@ import javax.ws.rs.core.*;
 public class AES128Controller {
 
     @Inject
-    AESUtils aesUtil;
+    Aes128Utils aes128;
 
     @POST
     @Path("/encrypt")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseDTO aesEncrypt(aesRequest req) throws Exception {
+        if (req == null && req.getInput().isEmpty() && req.getInput().isBlank() && req.getInput().equalsIgnoreCase("")) {
+            return new ResponseDTO<>().errorResponse(203,"Please input value");
+        }
         aesResponse res = new aesResponse();
         res.setInput(req.getInput());
-        res.setOutput(aesUtil.encrypt(req.getInput()));
+        res.setOutput(aes128.encrypt(req.getInput()));
         return new ResponseDTO<>().successResponse(res,"Data has been successfully encrypted");
     }
 
@@ -29,9 +33,12 @@ public class AES128Controller {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public ResponseDTO aesDecrypt(aesRequest req) throws Exception {
+        if (req == null && req.getInput().isEmpty() && req.getInput().isBlank() && req.getInput().equalsIgnoreCase("")) {
+            return new ResponseDTO<>().errorResponse(203,"Please input value");
+        }
         aesResponse res = new aesResponse();
         res.setInput(req.getInput());
-        res.setOutput(aesUtil.decrypt(req.getInput()));
+        res.setOutput(aes128.decrypt(req.getInput()));
         return new ResponseDTO<>().successResponse(res,"Data has been successfully decrypted");
     }
 }

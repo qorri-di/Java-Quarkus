@@ -1,4 +1,4 @@
-package com.qorri.dto;
+package com.qorri.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

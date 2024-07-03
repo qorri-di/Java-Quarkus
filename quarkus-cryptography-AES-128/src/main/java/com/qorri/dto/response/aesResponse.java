@@ -1,4 +1,4 @@
-package com.qorri.dto;
+package com.qorri.dto.response;
 
 public class aesResponse {
     private String input;
