@@ -1,4 +1,4 @@
-# Quarkus crytography base64
+# Quarkus cryptography base64
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
