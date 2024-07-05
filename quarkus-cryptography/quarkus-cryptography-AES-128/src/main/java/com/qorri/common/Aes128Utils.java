@@ -9,7 +9,7 @@ import java.util.Base64;
 @ApplicationScoped
 public class Aes128Utils {
     private String AES_ALGORITHM = "AES";
-    private String AES_KEY = "Insta: @qorri_di"; // Ganti dengan kunci rahasia Anda your-secret-key
+    private String AES_KEY = "Insta: @qorri_di"; //your-secret-key => aes128 = 16char
 
     public String encrypt(String plaintext) throws Exception {
         SecretKeySpec secretKey = new SecretKeySpec(AES_KEY.getBytes(StandardCharsets.UTF_8), AES_ALGORITHM);
