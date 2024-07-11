@@ -1,0 +1,1 @@
+# Quarkus Object Storage
