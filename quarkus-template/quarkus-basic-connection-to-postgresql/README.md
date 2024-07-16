@@ -1,4 +1,4 @@
-# Quarkus basic connection to databases
+# Quarkus basic connection to postgresql
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
