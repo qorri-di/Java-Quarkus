@@ -46,16 +46,16 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
+    <!-- Quarkus Hibernate ORM and MySQL Dependencies -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-hibernate-orm-panache</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jdbc-postgresql</artifactId>
+      <artifactId>quarkus-jdbc-mysql</artifactId>
     </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
+    <!-- Quarkus Hibernate ORM and MySQL Dependencies -->
   </dependencies>
   <build>
     <plugins>
