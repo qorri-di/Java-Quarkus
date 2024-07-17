@@ -46,16 +46,16 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
+    <!-- Quarkus JPA Dependencies -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-hibernate-orm-panache</artifactId>
     </dependency>
+    <!-- Quarkus JDBC Driver for SQL Server -->
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jdbc-postgresql</artifactId>
+      <artifactId>quarkus-jdbc-mssql</artifactId>
     </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
   </dependencies>
   <build>
     <plugins>
