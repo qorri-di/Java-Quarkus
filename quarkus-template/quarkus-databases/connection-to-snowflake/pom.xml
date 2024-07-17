@@ -46,16 +46,13 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
+    <!-- Snowflake JDBC Driver -->
     <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-hibernate-orm-panache</artifactId>
+      <groupId>net.snowflake</groupId>
+      <artifactId>snowflake-jdbc</artifactId>
+      <version>3.13.3</version>
     </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jdbc-postgresql</artifactId>
-    </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
+    <!-- Snowflake JDBC Driver -->
   </dependencies>
   <build>
     <plugins>
