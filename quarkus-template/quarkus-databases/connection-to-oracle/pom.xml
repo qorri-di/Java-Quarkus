@@ -46,16 +46,17 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
+    <!-- Quarkus JDBC Dependencies -->
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-hibernate-orm-panache</artifactId>
+      <artifactId>quarkus-jdbc-oracle</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jdbc-postgresql</artifactId>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+      <version>19.8.0.0</version>
     </dependency>
-    <!-- Quarkus Hibernate ORM dengan PostgreSQL -->
+    <!-- Oracle JDBC Driver -->
   </dependencies>
   <build>
     <plugins>
